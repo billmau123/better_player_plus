@@ -672,19 +672,22 @@ static inline CGFloat radiansToDegrees(CGFloat radians) {
 - (void)pictureInPictureControllerDidStartPictureInPicture:(AVPictureInPictureController *)pictureInPictureController  API_AVAILABLE(ios(9.0)){
     if (_eventSink != nil) {
         _eventSink(@{@"event" : @"pipStart"});
+        NSLog(@"--m xx pip success");
+    } else {
+        NSLog(@"--m xx pip fail");
     }
 }
 
 - (void)pictureInPictureControllerWillStopPictureInPicture:(AVPictureInPictureController *)pictureInPictureController  API_AVAILABLE(ios(9.0)){
-    NSLog(@"Stop pip");
+    NSLog(@"--m xx Stop pip");
 }
 
 - (void)pictureInPictureControllerWillStartPictureInPicture:(AVPictureInPictureController *)pictureInPictureController {
-    NSLog(@"Start pip");
+    NSLog(@"--m xx Start pip");
 }
 
 - (void)pictureInPictureController:(AVPictureInPictureController *)pictureInPictureController failedToStartPictureInPictureWithError:(NSError *)error {
-
+    NSLog(@"--m xx failed pip %@", [error localizedDescription]);
 }
 
 - (void)pictureInPictureController:(AVPictureInPictureController *)pictureInPictureController restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(void (^)(BOOL))completionHandler {
