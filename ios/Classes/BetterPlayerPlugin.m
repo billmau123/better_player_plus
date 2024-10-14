@@ -400,7 +400,7 @@ bool _remoteCommandsInitialized = false;
             result(nil);
         } else if ([@"enablePictureInPicture" isEqualToString:call.method]){
             double left = 0;
-            double top = 99;
+            double top = 100;
             double width = 160;
             double height = 90;
             // double left = [argsMap[@"left"] doubleValue];
