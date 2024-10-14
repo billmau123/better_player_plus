@@ -589,6 +589,7 @@ static inline CGFloat radiansToDegrees(CGFloat radians) {
     if (@available(iOS 9.0, *)) {
         if (_pipController && self._pictureInPicture && ![_pipController isPictureInPictureActive]) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                NSLog(@"--m xx starting to call usePlayerLayer 2");
                 [_pipController startPictureInPicture];
             });
         } else if (_pipController && !self._pictureInPicture && [_pipController isPictureInPictureActive]) {
@@ -632,6 +633,7 @@ static inline CGFloat radiansToDegrees(CGFloat radians) {
 {
     if( _player )
     {
+        NSLog(@"--m xx starting to call usePlayerLayer 1");
         // Create new controller passing reference to the AVPlayerLayer
         self._playerLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
         UIViewController* vc = [[[UIApplication sharedApplication] keyWindow] rootViewController];
